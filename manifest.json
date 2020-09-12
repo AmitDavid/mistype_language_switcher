@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Mistype switcher",
+  "version": "1.0.0",
+
+  "description": "Switch accidentally typed hebrew text in english back to hebrew and vice versa",
+
+  "icons": {
+    "16": "images/switcher.svg",
+    "32": "images/switcher.svg",
+    "48": "images/switcher.svg",
+    "64": "images/switcher.svg",
+    "96": "images/switcher.svg"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*",
+                  "https://*/*"
+      ],
+      "js": ["js/switcher.js"]
+    }
+  ]
+
+}
