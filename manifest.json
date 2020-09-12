@@ -4,22 +4,28 @@
   "version": "1.0.0",
 
   "description": "Switch accidentally typed hebrew text in english back to hebrew and vice versa",
+  "homepage_url": "https://github.com/amitDavid/mistype_language_switcher",
 
   "icons": {
-    "16": "images/switcher.svg",
-    "32": "images/switcher.svg",
-    "48": "images/switcher.svg",
-    "64": "images/switcher.svg",
-    "96": "images/switcher.svg"
+    "16": "icons/switcher.svg",
+    "32": "icons/switcher.svg",
+    "48": "icons/switcher.svg",
+    "64": "icons/switcher.svg",
+    "96": "icons/switcher.svg"
   },
 
-  "content_scripts": [
-    {
-      "matches": ["http://*/*",
-                  "https://*/*"
-      ],
-      "js": ["js/switcher.js"]
-    }
-  ]
+  "permissions": [
+    "menus",
+    "activeTab"
+  ],
 
+  "background": {
+    "scripts": ["js/contextMenu.js"]
+  },
+
+  "sidebar_action": {
+    "default_icon": "icons/switcher.svg",
+    "default_title" : "My sidebar",
+    "default_panel": "sidebar/sidebar.html"
+  }
 }
