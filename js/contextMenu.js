@@ -12,6 +12,8 @@ browser.menus.create({
   contexts: ["editable"]
 }, onCreated);
 
+const convert_code = '';
+
 browser.menus.onClicked.addListener((info, tab) => {
-    browser.tabs.executeScript(tab.id, {code: 'document.body.style.border = "5px solid blue"'})
+    browser.tabs.executeScript(tab.id, {file: "js/convertText.js"})
 });

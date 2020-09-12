@@ -21,11 +21,5 @@
 
   "background": {
     "scripts": ["js/contextMenu.js"]
-  },
-
-  "sidebar_action": {
-    "default_icon": "icons/switcher.svg",
-    "default_title" : "My sidebar",
-    "default_panel": "sidebar/sidebar.html"
   }
 }
