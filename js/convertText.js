@@ -24,7 +24,7 @@ function convert_text() {
         'ז': 'z', 'ס': 'x', 'ב': 'c', 'ה': 'v', 'נ': 'b', 'מ': 'n', 'צ': 'm', 'ת': ',', 'ץ': '.', '.': '/'
     };
 
-// Find what is the written language
+    // Find what is the written language
     for (let ch of text) {
         if (is_english_char(ch)) {
             selected_dict = dict_eng_to_heb;
@@ -35,7 +35,7 @@ function convert_text() {
         }
     }
 
-// Convert each character to its counterpart
+    // Convert each character to its counterpart
     for (let ch of text) {
         if (selected_dict[ch] === undefined) {
             convertedText += ch;
@@ -44,7 +44,7 @@ function convert_text() {
         }
     }
 
-// Replace text in text-box
+    // Replace text in text-box
     document.activeElement.value = convertedText;
 }
 

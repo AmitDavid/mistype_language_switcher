@@ -1,18 +1,11 @@
-function onCreated() {
-  if (browser.runtime.lastError) {
-    console.log(`Error: ${browser.runtime.lastError}`);
-  } else {
-    console.log("Item created successfully");
-  }
-}
-
 // Create menu button
 browser.menus.create({
   id: "switch-texts",
   title: "Switch Texts",
   contexts: ["editable"]
-}, onCreated);
+});
 
+// Add event listener for context menu button clicks
 browser.menus.onClicked.addListener((info, tab) => {
   browser.tabs.executeScript(tab.id, {file: "js/convertText.js"})
 });
