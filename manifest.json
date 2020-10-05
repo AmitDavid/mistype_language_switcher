@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Mistype switcher",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "description": "Switch accidentally written in English text into Hebrew and vice versa.",
   "homepage_url": "https://github.com/amitDavid/mistype_language_switcher",

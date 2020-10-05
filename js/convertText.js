@@ -7,17 +7,16 @@ function isHebrewChar(ch) {
 }
 
 function convertText() {
-    // TODO: check also InnerHTML for cases of using <div> instead of <input>
     // Get text in text-box
     let text = document.activeElement.value;
     let isInnerHTML = false;
 
     if (text === undefined) {
         isInnerHTML = true;
-        text = document.activeElement.innerHTML;
-    } else {
-        text = text.toLowerCase();
+        text = document.activeElement.textContent;
     }
+
+    text = text.toLowerCase();
 
     let convertedText = "";
     let selectedDict;
@@ -54,9 +53,12 @@ function convertText() {
         }
     }
 
+    // Change first character to uppercase
+    convertedText = convertedText.charAt(0).toUpperCase() + convertedText.slice(1);
+
     // Replace text in text-box
     if (isInnerHTML) {
-        document.activeElement.innerHTML = convertedText;
+        document.activeElement.textContent = convertedText;
     } else {
         document.activeElement.value = convertedText;
     }
